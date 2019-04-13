@@ -1,0 +1,78 @@
+{
+  "groups": [
+    {
+      "name": "itsocoo.multi.datasource",
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties",
+      "type": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "itsocoo.multi.datasource.enable.profile-type",
+      "type": "java.lang.String",
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties",
+      "defaultValue": "dev"
+    },
+    {
+      "name": "itsocoo.multi.datasource.enable.platform",
+      "type": "java.lang.reflect.Array",
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties"
+    }
+  ],
+  "hints": [
+    {
+      "name": "itsocoo.multi.datasource.enable.profile-type",
+      "type": "java.lang.String",
+      "values": [
+        {
+          "value": "dev"
+        },
+        {
+          "value": "pro"
+        },
+        {
+          "value": "local"
+        }
+      ]
+    },
+    {
+      "name": "itsocoo.multi.datasource.enable.platform",
+      "type": "java.lang.reflect.Array",
+      "values": [
+        {
+          "value": "only"
+        },
+        {
+          "value": "jackjones"
+        },
+        {
+          "value": "jlindeberg"
+        },
+        {
+          "value": "selected"
+        },
+        {
+          "value": "veromoda"
+        },
+        {
+          "value": "bestseller"
+        },
+        {
+          "value": "nameit"
+        },
+        {
+          "value": "bi"
+        },
+        {
+          "value": "hybris"
+        },
+        {
+          "value": "fordump"
+        },
+        {
+          "value": "fol"
+        }
+      ]
+    }
+  ]
+}
