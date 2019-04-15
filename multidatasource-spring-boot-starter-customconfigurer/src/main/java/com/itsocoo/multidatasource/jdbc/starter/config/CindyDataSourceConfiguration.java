@@ -1,6 +1,6 @@
 package com.itsocoo.multidatasource.jdbc.starter.config;
 
-import com.itsocoo.multidatasource.jdbc.starter.MyConditionalOnProperty;
+import com.itsocoo.multidatasource.jdbc.starter.properties.MyConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -14,30 +14,29 @@ import javax.sql.DataSource;
 /**
  * @author wanghaibo
  * @version V1.0
- * @desc hybris的数据库配置
+ * @desc cindy的数据库配置
  * @date 2018/8/7 10:48
  */
-@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "hybris")
-public class HybrisDataSourceConfiguration {
+@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "cindy")
+public class CindyDataSourceConfiguration {
+
     /**
-     * hybris的数据库配置
+     * cindy的数据库配置
      */
-    @Bean(name = "hybrisDataSource")
-    @Qualifier("hybrisDataSource")
-    @ConfigurationProperties(prefix = "itsocoo.multi.datasource.hybris")
-    public DataSource hybrisDataSource() {
+    @Bean(name = "cindyDataSource")
+    @Qualifier("cindyDataSource")
+    @ConfigurationProperties(prefix = "multi.datasource.cindy")
+    public DataSource cindyDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "hybrisJdbcTemplate")
-    public JdbcTemplate hybrisJdbcTemplate(@Qualifier("hybrisDataSource") DataSource dataSource) {
+    @Bean(name = "cindyJdbcTemplate")
+    public JdbcTemplate cindyJdbcTemplate(@Qualifier("cindyDataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
-    @Bean(name = "hybrisPlatformTransactionManager")
-    public PlatformTransactionManager hybrisPlatformTransactionManager(@Qualifier("hybrisDataSource") DataSource dataSource) {
+    @Bean(name = "cindyDataSourceTransactionManager")
+    public PlatformTransactionManager DataSourceTransactionManager(@Qualifier("cindyDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
-
-
 }

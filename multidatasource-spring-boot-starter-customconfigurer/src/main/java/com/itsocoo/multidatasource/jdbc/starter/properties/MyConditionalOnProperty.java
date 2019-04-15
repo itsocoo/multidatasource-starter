@@ -1,4 +1,4 @@
-package com.itsocoo.multidatasource.jdbc.starter;
+package com.itsocoo.multidatasource.jdbc.starter.properties;
 
 import org.springframework.context.annotation.Conditional;
 

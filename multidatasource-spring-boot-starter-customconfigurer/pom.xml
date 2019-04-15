@@ -19,7 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-        <spring-boot-version>${parent.version}</spring-boot-version>
+        <spring-boot-version>${project.parent.version}</spring-boot-version>
         <postgresql-version>42.2.4</postgresql-version>
         <mysql-connector-java-version>8.0.11</mysql-connector-java-version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
@@ -90,38 +90,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>${maven-install-plugin.version}</version>
             </plugin>
-
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-dependency-plugin</artifactId>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<id>copy</id>-->
-            <!--<phase>install</phase>-->
-            <!--<goals>-->
-            <!--<goal>copy-dependencies</goal>-->
-            <!--</goals>-->
-            <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
-            <!--&lt;!&ndash;<outputDirectory>&ndash;&gt;-->
-            <!--&lt;!&ndash;${project.build.directory}&ndash;&gt;-->
-            <!--&lt;!&ndash;</outputDirectory>&ndash;&gt;-->
-            <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
-
-
         </plugins>
     </build>
 

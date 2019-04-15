@@ -1,6 +1,6 @@
 package com.itsocoo.multidatasource.jdbc.starter.config;
 
-import com.itsocoo.multidatasource.jdbc.starter.MyConditionalOnProperty;
+import com.itsocoo.multidatasource.jdbc.starter.properties.MyConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -14,29 +14,30 @@ import javax.sql.DataSource;
 /**
  * @author wanghaibo
  * @version V1.0
- * @desc only的数据库配置
+ * @desc john的数据库配置
  * @date 2018/8/7 10:48
  */
-@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "only")
-public class OnlyDataSourceConfiguration {
+@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "john")
+public class JohnDataSourceConfiguration {
 
     /**
-     * only的数据库配置lzsz
+     * john的数据库配置
      */
-    @Bean(name = "onlyDataSource")
-    @Qualifier("onlyDataSource")
-    @ConfigurationProperties(prefix = "itsocoo.multi.datasource.only")
-    public DataSource onlyDataSource() {
+    @Bean(name = "johnDataSource")
+    @Qualifier("johnDataSource")
+    @ConfigurationProperties(prefix = "multi.datasource.john")
+    public DataSource johnDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "onlyJdbcTemplate")
-    public JdbcTemplate onlyJdbcTemplate(@Qualifier("onlyDataSource") DataSource dataSource) {
+    @Bean(name = "johnJdbcTemplate")
+    public JdbcTemplate johnJdbcTemplate(@Qualifier("johnDataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
-    @Bean(name = "onlyPlatformTransactionManager")
-    public PlatformTransactionManager onlyPlatformTransactionManager(@Qualifier("onlyDataSource") DataSource dataSource) {
+    @Bean(name = "johnPlatformTransactionManager")
+    public PlatformTransactionManager johnPlatformTransactionManager(@Qualifier("johnDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
+
 }

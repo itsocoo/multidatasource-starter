@@ -2,21 +2,21 @@
   "groups": [
     {
       "name": "itsocoo.multi.datasource",
-      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties",
-      "type": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties"
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.properties.MyDatasourceEnableProperties",
+      "type": "com.itsocoo.multidatasource.jdbc.starter.properties.MyDatasourceEnableProperties"
     }
   ],
   "properties": [
     {
       "name": "itsocoo.multi.datasource.enable.profile-type",
       "type": "java.lang.String",
-      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties",
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.properties.MyDatasourceEnableProperties",
       "defaultValue": "dev"
     },
     {
       "name": "itsocoo.multi.datasource.enable.platform",
       "type": "java.lang.reflect.Array",
-      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.MyDatasourceEnableProperties"
+      "sourceType": "com.itsocoo.multidatasource.jdbc.starter.properties.MyDatasourceEnableProperties"
     }
   ],
   "hints": [
@@ -37,40 +37,31 @@
     },
     {
       "name": "itsocoo.multi.datasource.enable.platform",
-      "type": "java.lang.reflect.Array",
+      "type": "java.lang.String",
       "values": [
         {
-          "value": "only"
+          "value": "andy"
         },
         {
-          "value": "jackjones"
+          "value": "cindy"
         },
         {
-          "value": "jlindeberg"
+          "value": "john"
         },
         {
-          "value": "selected"
+          "value": "jack"
         },
         {
-          "value": "veromoda"
+          "value": "chris"
         },
         {
-          "value": "bestseller"
+          "value": "barry"
         },
         {
-          "value": "nameit"
+          "value": "celia"
         },
         {
-          "value": "bi"
-        },
-        {
-          "value": "hybris"
-        },
-        {
-          "value": "fordump"
-        },
-        {
-          "value": "fol"
+          "value": "jones"
         }
       ]
     }

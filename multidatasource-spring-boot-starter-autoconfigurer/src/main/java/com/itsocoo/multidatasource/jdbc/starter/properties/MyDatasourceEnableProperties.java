@@ -9,9 +9,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @desc
  * @date 2018/8/7 16:28
  */
-@ConditionalOnProperty(name = "itsocoo.multi.datasources.enable.profile-type", matchIfMissing = true)
-@ConfigurationProperties(prefix = "itsocoo.multi.datasources.enable")
+@ConditionalOnProperty(name = MyDatasourceEnableProperties.PROFILE_TYPE, matchIfMissing = true)
+@ConfigurationProperties(prefix = MyDatasourceEnableProperties.PREFIX)
 public class MyDatasourceEnableProperties {
+    static final String PREFIX = "itsocoo.multi.datasources.enable";
+    static final String PROFILE_TYPE = "itsocoo.multi.datasources.enable.profile-type";
 
     private String profileType;
     private String[] platform;

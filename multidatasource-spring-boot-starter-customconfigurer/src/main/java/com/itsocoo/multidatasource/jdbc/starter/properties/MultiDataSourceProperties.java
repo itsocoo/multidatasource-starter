@@ -1,4 +1,4 @@
-package com.itsocoo.multidatasource.jdbc.starter;
+package com.itsocoo.multidatasource.jdbc.starter.properties;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -12,12 +12,11 @@ import org.springframework.stereotype.Component;
  * @date 2018/3/4 14:52
  */
 @Component
-// @ConditionalOnProperty(name = "itsocoo.multi.datasource.enable.profile-type", matchIfMissing = true)
 @ConditionalOnBean(MyDatasourceEnableProperties.class)
-@PropertySource(value = {"classpath:itsocoo-multi-datasource-${itsocoo.multi.datasource.enable.profile-type:pro}.properties"})
+@PropertySource(value = {"classpath:multi-datasource-${itsocoo.multi.datasource.enable.profile-type:pro}.properties"})
 @ConfigurationProperties(prefix = MultiDataSourceProperties.MULTI_DATASOURCE_PREFIX)
 public class MultiDataSourceProperties {
-    static final String MULTI_DATASOURCE_PREFIX = "itsocoo.multi.datasource";
+    static final String MULTI_DATASOURCE_PREFIX = "multi.datasource";
 
     private String[] enable;
 

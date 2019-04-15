@@ -1,6 +1,6 @@
 package com.itsocoo.multidatasource.jdbc.starter.config;
 
-import com.itsocoo.multidatasource.jdbc.starter.MyConditionalOnProperty;
+import com.itsocoo.multidatasource.jdbc.starter.properties.MyConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -14,29 +14,28 @@ import javax.sql.DataSource;
 /**
  * @author wanghaibo
  * @version V1.0
- * @desc bi的数据库配置
+ * @desc jack的数据库配置
  * @date 2018/8/7 10:48
  */
-@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "bi")
-public class BiDataSourceConfiguration {
-
+@MyConditionalOnProperty(name = "itsocoo.multi.datasource.enable.platform", havingValue = "jack")
+public class JackDataSourceConfiguration {
     /**
-     * bi的数据库配置
+     * jack的数据库配置
      */
-    @Bean(name = "biDataSource")
-    @Qualifier("biDataSource")
-    @ConfigurationProperties(prefix = "itsocoo.multi.datasource.bi")
-    public DataSource biDataSource() {
+    @Bean(name = "jackDataSource")
+    @Qualifier("jackDataSource")
+    @ConfigurationProperties(prefix = "multi.datasource.jack")
+    public DataSource jackDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "biJdbcTemplate")
-    public JdbcTemplate biJdbcTemplate(@Qualifier("biDataSource") DataSource dataSource) {
+    @Bean(name = "jackJdbcTemplate")
+    public JdbcTemplate jackJdbcTemplate(@Qualifier("jackDataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
-    @Bean(name = "biDataSourceTransactionManager")
-    public PlatformTransactionManager DataSourceTransactionManager(@Qualifier("biDataSource") DataSource dataSource) {
+    @Bean(name = "jackTranManager")
+    public PlatformTransactionManager jackManager(@Qualifier("jackDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 }

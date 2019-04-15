@@ -1,4 +1,4 @@
-package com.itsocoo.multidatasource.jdbc.starter;
+package com.itsocoo.multidatasource.jdbc.starter.properties;
 
 import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
 import org.springframework.boot.autoconfigure.condition.SpringBootCondition;
