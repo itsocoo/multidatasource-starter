@@ -1,4 +1,10 @@
-[多数据源代码的聚合](https://github.com/itsocoo/multidatasource-starter)
+---
+title: 多数据源代码的聚合
+date: 2019-04-15
+categories: ['心得']
+tags: ['心得','分享']
+comments: true
+---
 
 ####1.multidatasource-spring-boot-starter-customconfigurer 手工装配数据源
 
