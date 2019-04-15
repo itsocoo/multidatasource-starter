@@ -1,4 +1,4 @@
-多数据源代码的聚合
+[多数据源代码的聚合](https://github.com/itsocoo/multidatasource-starter)
 
 ####1.multidatasource-spring-boot-starter-customconfigurer 手工装配数据源
 
@@ -119,3 +119,14 @@ public class AndyDataSourceConfiguration {
 * 测试的sql在sql文件夹中
 
 ####2.multidatasource-spring-boot-starter-autoconfigurer 自动装配数据源（测试阶段）
+
+
+
+
+
+**具体参考[github](https://github.com/itsocoo/multidatasource-starter)代码**
+
+
+
+
+
