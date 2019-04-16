@@ -6,7 +6,7 @@ tags: ['心得','分享']
 comments: true
 ---
 
-####1.multidatasource-spring-boot-starter-customconfigurer 手工装配数据源
+###1.multidatasource-spring-boot-starter-customconfigurer 手工装配数据源
 
 > 将多个数据源配置成jar供其他项目引用即可，无需每个项目写多余代码
 
@@ -124,7 +124,7 @@ public class AndyDataSourceConfiguration {
 
 * 测试的sql在sql文件夹中
 
-####2.multidatasource-spring-boot-starter-autoconfigurer 自动装配数据源（测试阶段）
+###2.multidatasource-spring-boot-starter-autoconfigurer 自动装配数据源（测试阶段）
 
 
 
